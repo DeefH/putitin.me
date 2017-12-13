@@ -14,28 +14,44 @@
   color: white;
 }
 
-.img {
-  padding: 0px 0px;
-  border: 2px solid white;
-  text-align: center;
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.fullscreen-bg__video {
   position: absolute;
-  top: 20%;
-  left: 50%;
-  opacity: 0.55%;
-  transform: translate(-50%, -50%);
-  -moz-opacity: 0.65;
-  -khtml-opacity: 0.65;
-  background-color: #000000;
-  color: white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-a, a:visited {
-    color: #FFFFFF;
-    text-decoration:  none;
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    height: 300%;
+    top: -100%;
+  }
 }
 
-body {
-background-video:url('files/1.mp4');
-background-position:cover;
-background-size:cover;
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: url('files/1.mp4') center center / cover no-repeat;
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
 }
