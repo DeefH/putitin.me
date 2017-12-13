@@ -35,7 +35,7 @@ a, a:visited {
 }
 
 body {
-background-image:url('files/1.mp4');
+background-video:url('files/1.mp4');
 background-position:cover;
 background-size:cover;
 }
